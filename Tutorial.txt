@@ -1,0 +1,12 @@
+Movimiento: 
+WASD Movimiento sobre los ejes
+Space para saltar 
+LftCtrl para agacharse
+LftShft para correr
+A o D en la dirección de la pared para ejecutar wallrun
+ClickDer para tirar el gancho
+
+El gancho solamente se puede agarrar de las esferas y lo rojo te mata.
+
+Es un juego de plataformas donde el objetivo es q cada vez que avances se complique un poquito más por sección avanzada.
+Me inspiré en un juego flash q ya no está disponible llamado Give Up.
