@@ -65,10 +65,6 @@ public class PlayerMovement : MonoBehaviour
         crouching,
     }
 
- 
-  
-   
-
     void Start()
     {
 
@@ -79,7 +75,6 @@ public class PlayerMovement : MonoBehaviour
 
         startYScale = transform.localScale.y;
     }
-
 
     private void Update() 
     {   
@@ -100,12 +95,10 @@ public class PlayerMovement : MonoBehaviour
             }
     }
 
-
     private void FixedUpdate()
     {
         PlayerMove();
     }
-
 
     void MovementInput()
     {
@@ -219,7 +212,6 @@ public class PlayerMovement : MonoBehaviour
 
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
-
  
     void ResetJump()
     {

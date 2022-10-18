@@ -15,7 +15,7 @@ public class LaserScript : MonoBehaviour
         lr = GetComponent<LineRenderer>();
     }
 
-   /* void Update()
+   void Update()
     {
         lr.SetPosition(0, startPoint.position);
         RaycastHit hit;
@@ -25,15 +25,11 @@ public class LaserScript : MonoBehaviour
             {
                 lr.SetPosition(1, hit.point);
             }
-            if(hit.transform.tag == "Player")
-            {
-                Respawn();
-            
-            }
+           
         }
         else 
         {
             lr.SetPosition(1, -transform.right * 5000f);
         }
-    }*/
+    }
 }
