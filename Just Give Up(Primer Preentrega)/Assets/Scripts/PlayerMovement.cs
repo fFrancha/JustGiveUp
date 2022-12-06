@@ -2,6 +2,17 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    //MenuInGame
+    
+
+
+    //Sounds
+    private AudioSource audioPlayer;
+    public AudioClip jumpClip;
+    public AudioClip dieClip;
+    
+    
     //Kill y Respawn
     Vector3 posInicial;
 
@@ -67,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-
+        audioPlayer = GetComponent<AudioSource>();
         posInicial = transform.position;
         readyToJump = true;
         rb = GetComponent<Rigidbody>();
@@ -78,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update() 
     {   
+        
         WallRunInput();
         CheckForWall();
         SpeedControl();
@@ -107,11 +119,15 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetKey(jumpKey) && readyToJump && isFloor)
         {
+
             readyToJump = false;
 
             Jump();
 
             Invoke(nameof(ResetJump), jumpCD);
+
+            audioPlayer.clip = jumpClip;
+            audioPlayer.Play();
         }
 
         if(Input.GetKeyDown(crouchKey))
@@ -279,11 +295,17 @@ public class PlayerMovement : MonoBehaviour
         {
             Respawn();
         }
+
+       
+        
     }
 
     public void Respawn()
     {
         transform.position = posInicial;
+        audioPlayer.clip = dieClip;
+            audioPlayer.Play();
     }
-   
+
+    
 }
